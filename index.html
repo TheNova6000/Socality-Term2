@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socality - Stay Informed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@mozilla/readability/Readability.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+    <div id="section-newsFeed">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#" onclick="display('section-newsFeed')">
+                    <div class="brand-logo"><img src="https://i.pinimg.com/736x/d8/77/d0/d877d07d29cc69de0127db92650445af.jpg" class="brand-logo" />
+                    </div>
+                    <span class="brand-title">Sociality</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="newsAnchor" onclick="display('section-newsFeed')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                                    <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                                </svg>
+                                News Feed
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="archiveAnchor" href="#archiveCalender" onclick="display('section-archiveCalender')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                                Archive Calendar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container text-center">
+                <h1 class="hero-title">Stay informed with <span class="highlight">Sociality</span></h1>
+                <p class="hero-subtitle  d-none d-md-block">Your daily digest of what matters. Explore the full history of global events.</p>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="search" id="searchInput" class="search-input" placeholder="Search headlines...">
+                    <button id="searchBtn" class="search-button">Search</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <div class="row">
+
+                <div class="mb-5 col-3  d-none d-md-block" id="weather">
+                    <h2>Weather forcasting</h2>
+                    <input type="text" id="weathercityinput" class='search-input' placeholder="search city">
+                    <div class="news-card article-card">
+                        <h3 id="cityname">City Name</h3>
+                        <p id="temp">0 &deg;C</p>
+                        <p id="sky">Sky Description</p>
+                        <hr>
+                        <div class="d=flex">
+                            <p id="date">Date</p>
+                            <p id="time">Time</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Today's Headlines Section -->
+
+                <div class="col-9 mt-4">
+                    <div class="v-position">
+                        <a href="#" class="view-archive" onclick="display('section-archiveCalender')">
+                            View Archive
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="section-header d-flex flex-column justify-content-start">
+                        <div>
+                            <h2 class="section-title" id="heading_todaysn">Today's Headlines</h2>
+                            <p class="section-subtitle">Fresh from the press</p>
+                            <div>
+                                <p id="errortoday"></p>
+                                <div class="">
+                                    <div id="todaynws">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Yesterday Section -->
+            <div class="container m-3">
+                <div class="row">
+                    <div class="col-3  d-none d-md-block"></div>
+                    <div class=" col-9 align-self-end  mt-5 mb-5">
+                        <div class="section-header">
+                            <div>
+                                <h2 class="section-title" id="heading_yeaterdaysn">Yesterday</h2>
+                                <p class="section-subtitle">In case you missed it</p>
+                                <p id="errorwarning"></p>
+                                <div id="yesterdaynws"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- calender -->
+        <!-- Header -->
+    </div>
+    <div id="section-archiveCalender">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#" onclick="display('section-newsFeed')">
+                    <div class="brand-logo"><img src="https://i.pinimg.com/736x/d8/77/d0/d877d07d29cc69de0127db92650445af.jpg" class="brand-logo" />
+                    </div>
+                    <span class="brand-title">Sociality</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="newsAnchor2" onclick="display('section-newsFeed')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                                    <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                                </svg>
+                                News Feed
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="archiveAnchor2" href="#archiveCalender" onclick="display('section-archiveCalender')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                                Archive Calendar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="page-title">News Archive</h1>
+                    <p class="page-subtitle">Explore the history of global events. Select a date to view the headlines from that day.</p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <!-- Calendar Section -->
+                <div class="col-lg-4">
+                    <div class="calendar-card">
+                        <div class="calendar-header">
+                            <button class="btn-calendar-nav" id="prevMonth">&lt;</button>
+                            <span class="calendar-month" id="currentMonth">February 2026</span>
+                            <button class="btn-calendar-nav" id="nextMonth">&gt;</button>
+                        </div>
+                        <div class="calendar-body">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Su</div>
+                                <div class="weekday">Mo</div>
+                                <div class="weekday">Tu</div>
+                                <div class="weekday">We</div>
+                                <div class="weekday">Th</div>
+                                <div class="weekday">Fr</div>
+                                <div class="weekday">Sa</div>
+                            </div>
+                            <div class="calendar-dates" id="calendarDates">
+                                <!-- Calendar dates will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles Section -->
+                <div class="col-lg-8">
+                    <div class="articles-header">
+                        <h2 class="articles-date" id="selectedDate">February 3, 2026</h2>
+                        <span class="articles-count" id="no_of_articles">2 articles</span>
+                    </div>
+                    <div id="selectedDatenws">
+                        <!-- Article 1 -->
+                        <div class="article-card">
+
+                        </div>
+                        <!-- Article 2 -->
+                        <div class="article-card">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Monthly Company Coverage</h2>
+                <canvas id="companyMonthChart" height="100"></canvas>
+
+
+                <h2 class="mt-5">Company Growth Trend</h2>
+                <canvas id="companyGrowthChart" height="100"></canvas>
+
+
+            </div>
+
+        </div>
+
+
+
+        <script type="text/javascript" src="https://d2clawv67efefq.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    </div>
+    <div id="section-details">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#" onclick="display('section-newsFeed')">
+                    <div class="brand-logo"><img src="https://i.pinimg.com/736x/d8/77/d0/d877d07d29cc69de0127db92650445af.jpg" class="brand-logo" />
+                    </div>
+                    <span class="brand-title">Sociality</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="newsAnchor" onclick="display('section-newsFeed')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                                    <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                                </svg>
+                                News Feed
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="archiveAnchor" href="#archiveCalender" onclick="display('section-archiveCalender')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                                Archive Calendar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="article-card">
+                <div class="article-content">
+
+                    <h1 id="detail-title" class="article-title"></h1>
+
+                    <div class="article-info">
+                        <span id="detail-author" class="article-author"></span>
+                        <span id="detail-date" class="article-date"></span>
+                    </div>
+
+                    <div id="detail-body" class="article-description"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="logic.js"></script>
+</body>
+
+</html>

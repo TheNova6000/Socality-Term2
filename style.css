@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b5998, #5a7ac7);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a2752;
+}
+
+.navbar-nav .nav-link {
+    color: #5a7ac7;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3b5998;
+}
+
+.navbar-nav .nav-link svg {
+    margin-right: 4px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #ffffff;
+    padding: 60px 20px 80px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a2752;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #3b5998;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #657ccd;
+    margin-bottom: 40px;
+}
+
+/* Search Container */
+.search-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+    border: 2px solid #3b5998;
+    box-shadow: 0 4px 12px rgba(59, 89, 152, 0.1);
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-button {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #3b5998;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #2d4373;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 89, 152, 0.2);
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a2752;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #a9b9ed;
+}
+
+.view-archive {
+    color: #3b5998;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 10px;
+
+}
+
+.view-archive:hover {
+    color: #2d4373;
+    text-decoration: none;
+}
+
+.view-archive svg {
+    transition: transform 0.2s;
+}
+
+.view-archive:hover svg {
+    transform: translateX(3px);
+}
+
+/* News Card */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .news-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-title {
+        font-size: 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}
+
+/* Calender Section */
+/* Basic Reset and Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.logo-box {
+    display: inline-block;
+    background-color: #4A6FDC;
+    color: white;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link-item {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-link-item:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Page Header */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Calendar Card */
+.calendar-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-month {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-calendar-nav {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-calendar-nav:hover {
+    color: #333;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weekday {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.date-cell {
+    text-align: center;
+    padding: 0.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.date-cell:hover {
+    background-color: #f0f0f0;
+}
+
+.v-position {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.date-cell.active {
+    background-color: #4A6FDC;
+    color: white;
+    font-weight: 600;
+}
+
+/* Articles Section */
+.articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.articles-date {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.articles-count {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Article Card */
+.article-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.article-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.article-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.article-badge {
+    background-color: #f0f0f0;
+    color: #666;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.article-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.article-description {
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-author {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.article-link {
+    color: #4A6FDC;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.article-link:hover {
+    color: #3a5fc4;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .calendar-card {
+        margin-bottom: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* EXACTLY 2 per row */
+    gap: 24px;
+}
+
+/* #todaynws {
+    display: grid;
+    grid-template-columns: 1fr 1fr; EXACTLY 2
+    gap: 24px;
+} */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.news-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Basic Reset and Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b5998, #5a7ac7);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a2752;
+}
+
+.navbar-nav .nav-link {
+    color: #5a7ac7;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3b5998;
+}
+
+.navbar-nav .nav-link svg {
+    margin-right: 4px;
+}
+
+/* ============================================
+   ARTICLE CARD COMPONENT - COMPLETE CSS
+   ============================================ */
+
+/* Main Article Card Container */
+.article-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Card */
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Banner Section */
+.article-banner {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Banner Image */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Zoom Effect on Banner Image on Hover */
+.article-card:hover .banner-image {
+    transform: scale(1.05);
+}
+
+/* Article Content Container */
+.article-content {
+    padding: 1.5rem;
+}
+
+/* Article Meta Section */
+.article-meta {
+    margin-bottom: 1rem;
+}
+
+/* Category Badge */
+.article-badge {
+    background-color: #E8EFFF;
+    color: #4A6FDC;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Article Title */
+.article-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Article Info Section (Author and Date) */
+.article-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Author Section */
+.article-author {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Author Avatar */
+.author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Article Date */
+.article-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* Article Description */
+.article-description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* Read Article Link */
+.article-link {
+    color: #4A6FDC;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect on Link */
+.article-link:hover {
+    color: #3a5fc4;
+    text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet Devices (768px and below) */
+@media (max-width: 768px) {
+    .article-banner {
+        height: 180px;
+    }
+
+    .article-title {
+        font-size: 1.2rem;
+    }
+
+    .article-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+    .article-banner {
+        height: 160px;
+    }
+
+    .article-content {
+        padding: 1.25rem;
+    }
+
+    .article-title {
+        font-size: 1.1rem;
+    }
+
+    .article-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   OPTIONAL: MULTIPLE CARDS IN ROW
+   ============================================ */
+
+/* Container for Multiple Cards */
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Single Column on Mobile */
+@media (max-width: 576px) {
+    .articles-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+#weather h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#weather .news-card {
+    padding: 20px;
+    text-align: center;
+}
+
+#weather #temp {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3b5998;
+}
+
+#weather #sky {
+    text-transform: capitalize;
+    color: #666;
+}
