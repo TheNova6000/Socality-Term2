@@ -1,15 +1,3 @@
-![WhatsApp Image 2026-02-18 at 3 02 29 PM](https://github.com/user-attachments/assets/02813538-dc1a-4059-aa61-849fc8847b8b)Perfect. Now we make this strong. Not just a student project — a system.
-
-Here’s your upgraded **README.md** including:
-
-* n8n RSS automation
-* Why this is a Full Stack Web Application
-* Clear architecture explanation
-
-You can directly paste this into GitHub.
-
----
-
 # 🚀 Sociality – Intelligent News Aggregation Platform
 
 Sociality is a full stack news aggregation and visualization platform that automatically collects news using RSS feeds, processes structured data, stores it in a GitHub-based repository, and dynamically renders analytics through an interactive web interface.
